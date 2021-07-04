@@ -4,30 +4,18 @@ import { fetchEntries } from "utils/contentfulPosts";
 
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Post from "@components/Post";
+import CardList from "@components/CardList";
 
-export default function Home({ posts }) {
+export default function Home({ cards }) {
   return (
     <div className="container">
       <Head>
-        <title>Next + Contentful Starter</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Welcome to my portfolio website</title>
       </Head>
 
       <main>
         <Header />
-        <div className="posts">
-          {posts.map((p) => {
-            return (
-              <Post
-                key={p.date}
-                date={p.date}
-                image={p.image.fields}
-                title={p.title}
-              />
-            );
-          })}
-        </div>
+        <CardList cards={cards} />
       </main>
 
       <Footer />
@@ -75,13 +63,13 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const res = await fetchEntries();
-  const posts = await res.map((p) => {
-    return p.fields;
+  const cards = await res.map((c) => {
+    return c.fields;
   });
 
   return {
     props: {
-      posts,
+      cards,
     },
   };
 }
