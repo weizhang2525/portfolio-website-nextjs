@@ -1,22 +1,42 @@
 import React, { useState } from "react";
 import Card from "@components/Card";
-import { Container } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 const CardList = ({ cards }) => {
-  const [selected, setSelected] = useState(
+  const [cardSelected, SetCardSelected] = useState(
     cards.map((card, index) => {
-      return { id: index, selected: false };
+      return { id: index, cardSelected: false, ...card };
     })
   );
 
-  console.log(selected);
+  const handleCardClick = (id) => {
+    const updatedSelectedState = cardSelected.map((card) => {
+      return {
+        ...card,
+        cardSelected: card.id === id,
+      };
+    });
+
+    console.log("hi");
+
+    SetCardSelected(updatedSelectedState);
+  };
 
   return (
-    <Container>
-      {cards.map((card, k) => {
-        return <Card item={card} selected={selected} key={k} />;
+    <Flex direction={["column", "column", "row"]}>
+      {cardSelected.map((card, k) => {
+        return (
+          <Card
+            item={card}
+            key={k}
+            sx={{
+              mx: "15px",
+            }}
+            onClick={() => handleCardClick(k)}
+          />
+        );
       })}
-    </Container>
+    </Flex>
   );
 };
 
