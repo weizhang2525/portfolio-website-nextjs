@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Container, Text } from "@chakra-ui/react";
+import { Flex, Box, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
 const CardImage = styled.img`
@@ -13,7 +13,7 @@ const Card = ({ item, ...rest }) => {
   const { title, imgSrc, subtitle, link } = item;
   const thumbnail = imgSrc && imgSrc.fields.file.url;
   return (
-    <Container {...rest}>
+    <Box {...rest}>
       {imgSrc && <CardImage src={thumbnail} alt={thumbnail} />}
       {item.cardSelected && (
         <Flex mt="10px" minHeight="10px" direction="column">
@@ -26,7 +26,7 @@ const Card = ({ item, ...rest }) => {
           </a>
         </Flex>
       )}
-    </Container>
+    </Box>
   );
 };
 

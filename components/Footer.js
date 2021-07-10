@@ -11,7 +11,7 @@ const Icon = styled.a`
 const Footer = () => {
   return (
     <footer>
-      <Container w="100vw">
+      <Container w="100vw" position="absolute" bottom="0" left="0">
         <Flex justify="space-between" alignItems="center" px="10px">
           <Text fontSize="md">Wei Zhang</Text>
           <Flex justify="center">

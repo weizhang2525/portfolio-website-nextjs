@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@components/Card";
-import { Flex } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 
 const CardList = ({ cards }) => {
-  const [cardSelected, SetCardSelected] = useState(
+  const [cardSelected, setCardSelected] = useState([]);
+
+  useEffect(async () => {
     cards.map((card, index) => {
-      return { id: index, cardSelected: false, ...card };
-    })
-  );
+      card.then((data) => {
+        setCardSelected((prevState) => {
+          return prevState
+            ? [{ id: index, cardSelected: false, ...data.fields }, ...prevState]
+            : { id: index, cardSelected: false, ...data.fields };
+        });
+      });
+    });
+  }, []);
 
   const handleCardClick = (id) => {
     const updatedSelectedState = cardSelected.map((card) => {
@@ -17,26 +25,22 @@ const CardList = ({ cards }) => {
       };
     });
 
-    console.log("hi");
-
-    SetCardSelected(updatedSelectedState);
+    setCardSelected(updatedSelectedState);
   };
 
   return (
-    <Flex direction={["column", "column", "row"]}>
-      {cardSelected.map((card, k) => {
-        return (
-          <Card
-            item={card}
-            key={k}
-            sx={{
-              mx: "15px",
-            }}
-            onClick={() => handleCardClick(k)}
-          />
-        );
-      })}
-    </Flex>
+    <SimpleGrid columns={[2, null, 4]} spacing="40px">
+      {cardSelected.length > 0 &&
+        cardSelected.map((card, k) => {
+          return (
+            <Card
+              item={card}
+              key={k}
+              onClick={() => handleCardClick(card.id)}
+            />
+          );
+        })}
+    </SimpleGrid>
   );
 };
 

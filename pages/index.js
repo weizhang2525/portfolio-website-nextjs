@@ -1,47 +1,16 @@
 import Head from "next/head";
+import Layout from "@components/Layout";
+import { fetchPage } from "@utils/contentfulAPIHelpers";
+import { Flex } from "@chakra-ui/react";
 
-import { fetchEntries } from "utils/contentfulPosts";
-
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import CardList from "@components/CardList";
-
-export default function Home({ cards }) {
+export default function Home({ page }) {
   return (
-    <div className="container">
+    <Flex h="100vh" flexDirection="column" justify="center" align="center">
       <Head>
-        <title>Welcome to my portfolio website</title>
+        <title>Welcome to my Portfolio Website</title>
       </Head>
 
-      <main>
-        <Header />
-        <CardList cards={cards} />
-      </main>
-
-      <Footer />
-
-      <style jsx>{`
-        .container {
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .posts {
-          display: flex;
-        }
-      `}</style>
+      <Layout blocks={page.blocks} />
 
       <style jsx global>{`
         html,
@@ -57,19 +26,15 @@ export default function Home({ cards }) {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Flex>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetchEntries();
-  const cards = await res.map((c) => {
-    return c.fields;
-  });
-
+  const page = await fetchPage("home");
   return {
     props: {
-      cards,
+      page,
     },
   };
 }
