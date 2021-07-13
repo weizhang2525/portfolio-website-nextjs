@@ -7,10 +7,9 @@ const NavItem = ({ slug, title }) => {
       href={slug}
       sx={{
         textDecoration: "none",
-        color: "black",
       }}
     >
-      <Heading>{title}</Heading>
+      <Heading fontSize={["lg", null, "4xl"]}>{title}</Heading>
     </Link>
   );
 };
@@ -23,10 +22,16 @@ const NavBar = () => {
       w="100vw"
       px="20px"
       position="absolute"
-      top="0"
+      top="2"
     >
-      <Heading flex="5">Wei Zhang</Heading>
-      <Flex direction="row" justify="space-around" flex="1">
+      <Heading flex={["2", "3", null, "5"]} fontSize={["lg", null, "4xl"]}>
+        Wei Zhang
+      </Heading>
+      <Flex
+        direction="row"
+        justify="space-around"
+        flex={["2", "2", "2", "2", "1"]}
+      >
         <NavItem slug="/" title="Home" />
         <NavItem slug="/about" title="About" />
       </Flex>
