@@ -29,7 +29,7 @@ const CardList = ({ cards }) => {
   };
 
   return (
-    <SimpleGrid columns={[2, null, 4]} spacing="40px" mx="40px">
+    <SimpleGrid columns={[1, 2, 2, 2, 4]} spacing="40px" mx="40px" mb="2em">
       {cardSelected.length > 0 &&
         cardSelected.map((card, k) => {
           return (

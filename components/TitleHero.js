@@ -3,11 +3,11 @@ import { Heading, Text, Container } from "@chakra-ui/react";
 
 const TitleHero = ({ title, subtitle }) => {
   return (
-    <Container max-width="66.6%" justify="center" py="5em">
-      <Heading fontSize="6rem" m="0">
+    <Container max-width="66.6%" justify="center" py="4em">
+      <Heading fontSize={["3em", null, "6em"]} m="0">
         {title}
       </Heading>
-      <Text fontSize="1.25rem">{subtitle}</Text>
+      <Text fontSize={["1em", null, "1.25rem"]}>{subtitle}</Text>
     </Container>
   );
 };

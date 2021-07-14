@@ -5,16 +5,14 @@ const Card = ({ item, ...rest }) => {
   const { title, imgSrc, subtitle, link } = item;
   const thumbnail = imgSrc && imgSrc.fields.file.url;
   return (
-    <Box {...rest}>
-      <Box>
-        <Image
-          src={thumbnail}
-          alt={title}
-          w={["300px", null, "300px"]}
-          borderRadius="10px"
-          boxShadow="0px 0px 3px 1px #ccc"
-        />
-      </Box>
+    <Box {...rest} w="300px">
+      <Image
+        src={thumbnail}
+        alt={title}
+        borderRadius="10px"
+        boxShadow="0px 0px 3px 1px #ccc"
+      />
+
       {item.cardSelected && (
         <Flex mt="10px" minHeight="10px" direction="column">
           <Text fontSize="md">{title}</Text>

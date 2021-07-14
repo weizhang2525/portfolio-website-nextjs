@@ -1,6 +1,7 @@
 import CardList from "@components/CardList";
 import TitleHero from "@components/TitleHero";
 import { fetchCard } from "./contentfulAPIHelpers";
+import { Container } from "@chakra-ui/react";
 
 function parseCardList(cardList) {
   return cardList.map(async (card) => {

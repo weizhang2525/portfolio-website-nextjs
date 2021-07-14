@@ -10,30 +10,27 @@ const Icon = styled.a`
 
 const Footer = () => {
   return (
-    <Container minW="100vw" position="fixed" bottom="0" left="0">
-      <Flex justify="space-between" alignItems="center" px="10px">
-        <Text fontSize="md">Wei Zhang</Text>
-        <Flex justify="center">
-          <IconContext.Provider value={{ color: "darkgray", size: "2em" }}>
-            <Icon
-              href="https://github.com/weizhang2525"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IoLogoGithub />
-            </Icon>
-            <Icon
-              href="https://www.linkedin.com/in/wzhang125/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IoLogoLinkedin />
-            </Icon>
-          </IconContext.Provider>
-        </Flex>
-        <Text fontSize="md">This site was made by Wei Zhang</Text>
+    <Flex justify="space-between" alignItems="center" px="10px" minW="100vw">
+      <Text fontSize="md">This site was made by Wei Zhang</Text>
+      <Flex justify="center">
+        <IconContext.Provider value={{ color: "darkgray", size: "2em" }}>
+          <Icon
+            href="https://github.com/weizhang2525"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IoLogoGithub />
+          </Icon>
+          <Icon
+            href="https://www.linkedin.com/in/wzhang125/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IoLogoLinkedin />
+          </Icon>
+        </IconContext.Provider>
       </Flex>
-    </Container>
+    </Flex>
   );
 };
 
