@@ -1,17 +1,18 @@
 import React from "react";
 import { Flex, Box, Text, Image } from "@chakra-ui/react";
+import styled from "@emotion/styled";
+
+const CardImage = styled.img`
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 1px #ccc;
+`;
 
 const Card = ({ item, ...rest }) => {
   const { title, imgSrc, subtitle, link } = item;
   const thumbnail = imgSrc && imgSrc.fields.file.url;
   return (
     <Box {...rest} w="300px">
-      <Image
-        src={thumbnail}
-        alt={title}
-        borderRadius="10px"
-        boxShadow="0px 0px 3px 1px #ccc"
-      />
+      <CardImage src={thumbnail} alt={title} />
 
       {item.cardSelected && (
         <Flex mt="10px" minHeight="10px" direction="column">
