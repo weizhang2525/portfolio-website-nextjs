@@ -3,20 +3,23 @@ import Layout from "@components/Layout";
 import { fetchPage } from "@utils/contentfulAPIHelpers";
 import { Flex } from "@chakra-ui/react";
 
-export default function Home({ page }) {
+const About = ({ page }) => {
+  console.log(page.blocks);
   return (
     <Flex h="100vh" flexDirection="column" justify="center" align="center">
       <Head>
-        <title>Welcome to my Portfolio Website</title>
+        <title>About Me</title>
       </Head>
 
       <Layout blocks={page.blocks} />
     </Flex>
   );
-}
+};
+
+export default About;
 
 export async function getStaticProps() {
-  const page = await fetchPage("home");
+  const page = await fetchPage("about");
   return {
     props: {
       page,

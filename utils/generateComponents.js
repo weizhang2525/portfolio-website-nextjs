@@ -1,8 +1,7 @@
 import CardList from "@components/CardList";
 import TitleHero from "@components/TitleHero";
 import { fetchCard } from "./contentfulAPIHelpers";
-import { Container } from "@chakra-ui/react";
-
+import RichText from "@components/RichText";
 function parseCardList(cardList) {
   return cardList.map(async (card) => {
     return await fetchCard(card.sys.id);
@@ -16,6 +15,8 @@ const generateComponents = ({ block }) => {
       return <CardList cards={parseCardList(block.fields.cardList)} />;
     case "titleHero":
       return <TitleHero {...block.fields} />;
+    case "textSection":
+      return <RichText {...block.fields} />;
   }
   return <></>;
 };

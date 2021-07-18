@@ -658,6 +658,26 @@
   dependencies:
     "@chakra-ui/utils" "1.8.0"
 
+"@contentful/rich-text-html-renderer@^15.0.0":
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-html-renderer/-/rich-text-html-renderer-15.0.0.tgz#7649251c8e35c762bb2054b7f9f4d32e9211b8e4"
+  integrity sha512-KghVNlMdMAqPZWvfgApiVLqaOyMqkuXgJnRm7LpCULP5d/gogDuqz4h/5emOWW562Lxvxy6jSC8roZXu/yZngg==
+  dependencies:
+    "@contentful/rich-text-types" "^15.0.0"
+    escape-html "^1.0.3"
+
+"@contentful/rich-text-react-renderer@^15.0.0":
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.0.0.tgz#3b9be3587af4c54f033383fcb1731340de14d210"
+  integrity sha512-59NwFkyVyCAJAPilXrNlOjN6y4EZo+h3KLHwREVy8Lo+Fl03GZx5LUb3pijiM4MFdVxByvUiRyRA5VJFzbGX3w==
+  dependencies:
+    "@contentful/rich-text-types" "^15.0.0"
+
+"@contentful/rich-text-types@^15.0.0":
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.0.0.tgz#bd676960dea3e4b5a56fd6653d8cc800a81d6bca"
+  integrity sha512-e7aXF/BhXPOpLW+PsbD57Fyt0meiRYT3nTct2iLGa2WYRZMM6E+clnCAXhSRBQ8qhAso7SSUGeiBMxPeaO3KKQ==
+
 "@emotion/babel-plugin@^11.3.0":
   version "11.3.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.3.0.tgz#3a16850ba04d8d9651f07f3fb674b3436a4fb9d7"
@@ -1678,6 +1698,11 @@ escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
+
+escape-html@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
+  integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"
