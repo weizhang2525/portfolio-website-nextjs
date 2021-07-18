@@ -4,7 +4,6 @@ import { fetchPage } from "@utils/contentfulAPIHelpers";
 import { Flex } from "@chakra-ui/react";
 
 const About = ({ page }) => {
-  console.log(page.blocks);
   return (
     <Flex h="100vh" flexDirection="column" justify="center" align="center">
       <Head>

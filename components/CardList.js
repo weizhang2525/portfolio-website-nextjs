@@ -9,7 +9,6 @@ const CardList = ({ cards }) => {
     cards.map((card, index) => {
       card.then((data) => {
         setCardSelected((prevState) => {
-          console.log(prevState);
           return prevState
             ? [{ id: index, cardSelected: false, ...data.fields }, ...prevState]
             : { id: index, cardSelected: false, ...data.fields };
